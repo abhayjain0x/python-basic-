@@ -36,6 +36,7 @@ def get_story_metadata(id):
     with col2:
         st.metric(label="Score", value=score)
     st.divider()
+    time.sleep(1)
 
 def display_stories(num_stories):
     ids = getting_ids()
