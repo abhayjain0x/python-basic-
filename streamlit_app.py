@@ -29,12 +29,16 @@ def get_story_metadata(id):
     score = news_data.get('score', 0)
     
     # Use columns to display story info
-    col1, col2 = st.columns([4,1])
+    col1, col2, col3 = st.columns([4,1,1])
     with col1:
         st.subheader(f":{random.choice(colors)}[{title}]")
         st.write(f"[Read more]({urlu})")
     with col2:
         st.metric(label="Score", value=score)
+    with col3:
+        # Add a comment which opens the HackerNews story (its comments)
+        comment_url = f"https://news.ycombinator.com/item?id={id}"
+        st.write(f"[Comments]({comment_url})")
     st.divider()
     time.sleep(1)
 
